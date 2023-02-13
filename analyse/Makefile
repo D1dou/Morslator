@@ -6,9 +6,9 @@ SRC = analyse.c
 OBJ = ${SRC:.c=.o}
 DEP = ${SRC:.c=.d}
 
-all: main
+all: analyse
 
-main: ${OBJ}
+analyse: ${OBJ}
 
 clean:
 	${RM} ${OBJ}
