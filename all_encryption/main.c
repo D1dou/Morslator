@@ -1,9 +1,10 @@
-#include "main.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
+#include "main.h"
+
 #define uint unsigned long
 
 int main() {
@@ -138,7 +139,7 @@ retry:
                     printf("Message dechiffre : %s\n", message);
 					break;
                 }
-                case 'h':
+                case 'r':
                 {
                 // RSA ENCRYPTION && DECRYPTION
 					RSA(msg, 0);

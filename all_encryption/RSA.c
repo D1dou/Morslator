@@ -3,7 +3,6 @@
 #include <openssl/err.h>
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
 
 #define KEY_LENGTH  2048
 #define PUB_EXP     3
