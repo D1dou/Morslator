@@ -1,7 +1,3 @@
-/*
- * C program to Implement the RSA Algorithm
- */
- 
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -111,7 +107,7 @@ char *encrypt(char *message, long e, long n)
     for (i = 0; i < len; i++)
     {
         cipher[i] = pomod(message[i], e, n);
-        printf("\n%c -> %c", message[i], cipher[i]);
+        //printf("\n%c -> %c", message[i], cipher[i]);
     }
     return cipher;
 }
@@ -131,7 +127,7 @@ char *decrypt(char *cipher, long d, long n)
     {
         // message[i] = (long) pow(cipher[i], d) % n;
         message[i] = pomod(cipher[i], d, n);
-        printf("\n%c -> %c", cipher[i], message[i]);
+        //printf("\n%c -> %c", cipher[i], message[i]);
     }
     return message;
 }
@@ -142,10 +138,12 @@ int main()
     long n, e, d;
     char *message;
     char *cipher;
+
     printf("\nEnter the value of p: ");
     scanf("%d", &p);
     printf("\nEnter the value of q: ");
     scanf("%d", &q);
+
     if (isPrime(p) && isPrime(q))
     {
         n = p * q;
@@ -158,17 +156,17 @@ int main()
         printf("\nThe value of d is %ld", d);
         printf("\nEnter the message: ");
         message = (char *)malloc(sizeof(char) * 100);
-        scanf("%s", message);
+        scanf(" %[^\n]", message);
         cipher = encrypt(message, e, n);
         puts("\nThe encrypted message is: ");
         printf("%s", cipher);
         message = decrypt(cipher, d, n);
         puts("\nThe original message was: ");
-        printf("%s", message);
+        printf("%s\n", message);
     }
     else
     {
-        printf("\nThe value of p and q should be prime.");
+        printf("\nThe value of p and q should be prime.\n");
     }
     return 0;
 }
