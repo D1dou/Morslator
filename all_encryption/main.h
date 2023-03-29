@@ -42,6 +42,6 @@ void keyExpansionBlowfish(KeyStruct *ptr, unsigned char key[8]);
 void BlowfishDecryption(KeyStruct *ptr, unsigned int * left, unsigned int * right);
 
 // ___
-// RSA
+// rsa
 // ___
 void RSA(char *message, int mode);

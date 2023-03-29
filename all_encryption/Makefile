@@ -4,7 +4,7 @@ LIBS=-lm
 
 all: main
 
-main: main.o aes_decrypt.o blowfish.o rsa
+main: main.o aes_decrypt.o blowfish.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 main.o: main.c
@@ -15,9 +15,6 @@ aes_decrypt.o: aes_decrypt.c
 
 blowfish.o: blowfish.c
 	$(CC) $(CFLAGS) -c $<
-
-rsa:
-	$(CC) -I../include RSA.c -L . -lcrypto -lssl
 
 clean:
 	rm -f *.o main
