@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link rel="stylesheet" href="menu.css">
+    <!-- Boxiocns CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal">
+    </script>
+  </head>
+<body>
+
+  <div class="sidebar close">
+    <div class="logo-details">
+      <img src="ungroupe_transparent.png" width="77px">
+        <span class="logo_name">U.G.</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="menu.html">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Menu</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="menu.html">Menu</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="quisommesnous.html">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">À propos</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="quisommesnous.html">À propos</a></li>
+          <li><a href="quisommesnous.html">Qui sommes-nous ?</a></li>
+          <li><a href="unequestion.html">Une question ?</a></li>
+          <li><a href="recommandations.html">Les recommandations !</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="lesmembres.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">L'Equipe</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="lesmembres.html">L'Equipe</a></li>
+          <li><a href="lesmembres.html">Les membres</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Objectif</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Pourquoi Morslator</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-plug' ></i>
+            <span class="link_name">Apprendre</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Produit et services</a></li>
+          <li><a href="#">Télécharger l'application</a></li>
+          <li><a href="#">Mode d'emploi</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Mentions Légales</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Mentions Légales</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Au plaisir.</div>
+        <div class="job">À bientôt !</div>
+      </div>
+      <button class="logout">
+        <a href="entry.html">
+          <i class='bx bx-log-out'></i>
+        </a>
+      </button>
+      
+    </div>
+  </li>
+</ul>
+  </div>
+
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Qui sommes-nous ?</span>
+    </div>
+
+        <div class="hero">
+
+            <!--contenu intéressant-->
+          <main>
+            <section class="showcase-area">
+              <div class="container">
+                <div class="showcase-info">
+                  <h3 class="sub-heading">Un groupe</h3>
+                  <h1 class="heading">Morslator,<br>la force de la sécurité.</h1>
+                  <p class="text">Dans un contexte de guerre,<br> la sécurité des communications est<br> cruciale pour les Alliés. <br>Nous avons développé un <br>utilitaire de traduction morse sécurisé <br>avec des fonctionnalités d'encryption <br>robustes pour garantir la<br> confidentialité des échanges
+                  <br><br>
+                  <p class="sub-text">Comment utiliser cet utilitaire ?</p>
+                  </p>
+                  <div class="btn">
+                    <div class="play"></div>
+                    <a href="#" class="send">→ Vidéo explicative</a>
+                  </div>
+                  <div class="clip">
+                    <video src="trailer.mp4" controls></video>
+                    <b class="closed">Fermer</b>
+                  </div>
+                </div>
+                <div class="showcase-image">
+                  <img src="angry_man.png" class="camiontlfm" alt="camionnette">
+                  <img src="morsecode1.png" class="triangles1" alt="">
+                  <img src="morsecode2.png" class="triangles2" alt="">
+                </div>
+              </div>
+            </section>
+          </main>
+            <!---->
+
+        </div>
+
+  </section>
+
+<script src="card.js"></script>
+    <script src="toggle.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY>0);
+        })
+    </script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+            LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#lottie-camion',
+    actions: [
+      {
+        visibility: [0,1],
+        type: 'seek',
+        frames: [0, 201],
+      },
+        ],
+    });
+    </script>
+    <!--loading effect-->
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+     </script>
+
+
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+
+  <!-- truck button -->
+  <script>
+    const order = document.querySelector(".order");
+
+    function handleOrderClick() {
+    if (!order.classList.contains("animate")) {
+    order.classList.add("animate");
+    setTimeout(function() {
+      order.classList.remove("animate");
+    }, 10000);
+  }
+}
+
+function init() {
+  order.addEventListener("click", handleOrderClick);
+}
+
+init();
+  </script>
+
+<script src="appearing.js"></script>
+
+  <!-- jouer la vidéo trailer -->
+  <script>
+    let btn = document.querySelector('.btn');
+    let clip = document.querySelector('.clip');
+    let closed = document.querySelector('.closed');
+    let video = document.querySelector('video');
+    btn.onclick = function(){
+      clip.classList.add('active')
+      video.play();
+      video.currentTime = 0;
+    }
+    closed.onclick = function(){
+      btn.classList.remove('active')
+      clip.classList.remove('active')
+      video.pause();
+    }
+  </script>
+
+</body>
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <span class="logo_name">TLFM</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Morslator</li>
+          <li><a href="menu.html">Menu principal</a></li>
+          <li><a href="unequestion.html">Une question ?</a></li>
+          <li><a href="recommandations.html">Les recommandations</a></li>
+
+        </ul>
+        <ul class="box">
+          <li class="link_name">Produit et services</li>
+          <li><a href="#">Télécharger l'utilitaire</a></li>
+          <li><a href="#">Tutoriel</a></li><!--installation expliquée-->
+        </ul>
+        <ul class="box">
+          <li class="link_name">L'Equipe</li>
+          <li><a href="lesmembres.html">Les membres</a></li>
+          <li><a href="#">Vision</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Avec Morslator</li>
+          <li><a href="https://instagram.com/morslator?igshid=ZDdkNTZiNTM=">Instagram</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Newsletter</li>
+          <li><input type="text" placeholder="Entrez votre e-mail"></li>
+          <li><input type="button" value="Souscrire"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © - 2022 - <a href="#"> Morslator </a> · All rights reserved · </span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+</footer>
+
+</html>

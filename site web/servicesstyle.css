@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Monserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,000;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*/
+:root {
+    --primary: #001145;
+    --secondary: #b83625;
+    --dark: #212121;
+    --light: #F3F3F3;
+    --blue:#0a0f26;
+  }
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 115vh;
+    color:#fff;
+}
+#preloader
+{
+  top:0;
+  left:0;
+  background: #000 url(loader.gif) no-repeat center center;
+  background-size: 15%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100000;
+}
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6%;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+header.sticky
+{
+    padding: 5px 100px;
+    background: #fff;
+}
+header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li
+{
+    position: relative;
+    list-style: none;
+}
+header ul li a
+{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+/*.banner
+{
+    position: relative;
+    width: 94%;
+    height: 100vh;
+    background: url(canva_truck.png);
+    background-size: cover;
+    border-radius: 10%;
+    top: 125px;
+    left: 3%;
+    right: 3%;
+
+}*/
+header.sticky ul li a
+{
+    color: #000;
+}
