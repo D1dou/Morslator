@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> TLFM - Transports </title>
+    <link rel = "stylesheet" href = "style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="business logo" width=" 200px" height="50px">
+        </div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="lesmembres.html">TEAM</a></li>
+                <li><a href="unequestion.html">CONTACT</a></li>
+                <!-- <li><a href="#">LEARN</a></li> -->
+                <li><a href="entry.html">OUT</a></li>
+            </ul>
+    </header>
+    <section class="banner"></section>
+
+<div class="content">
+
+    <div class="tabs">
+        <div class="tabs_head">
+            <div class="tabs_toggle is-active">
+                <span class="tabs_name">Identité</span>
+            </div>
+            <div class="tabs_toggle">
+                <span class="tabs_name">Contact</span>
+            </div>
+            <div class="tabs_toggle">
+                <span class="tabs_name">Plus</span> 
+            </div> 
+        </div>
+        <div class="tabs_body">
+            <div class="tabs_content is-active">
+                <h1 class="tabs_title">Identité</h1>
+                <img src="identity.png" class="identity">
+                <p class="tabs_text">
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Fusce ac sagittis risus, sit amet ultrices quam. Duis risus
+                     purus, dapibus et rutrum ut, iaculis eget metus. Mauris 
+                     vehicula lacinia est sed feugiat. Integer facilisis, 
+                     tellus pharetra tincidunt condimentum, sem turpis fringilla 
+                     dui, at egestas lacus tortor a erat. Orci varius natoque 
+                     penatibus et magnis dis parturient montes, nascetur ridiculus 
+                     mus. In hac habitasse platea dictumst. Orci varius natoque 
+                     penatibus et magnis dis parturient montes, nascetur ridiculus 
+                     mus. Etiam interdum vestibulum dolor. djshfksdlqhfkdsqjfjdks
+                </p>
+            </div>
+            <div class="tabs_content">
+                <h1 class="tabs_title">Contact</h1>
+                <p class="tabs_text"></p>
+
+                <div class="card">
+                    <div class="card__inner">
+                        <div class="card__face card__face--front">
+                            <p><br>please click <br>to see TLFM's digital card <br>†</p>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <div class="card__content">
+                                <div class="card__header">
+                                    <img src="logo_pp.png" alt="" class="pp" />
+                                    <h3>It's nice to meet you.</h3>
+                                </div>
+                                <div class="card__body">
+                                    <h3>Contact Information</h3>
+                                    <p><strong>ad. </strong> 3D Rue Ferdinand buisson </p>
+                                    <p>77100 Meaux</p>
+                                    <p><strong>t.</strong> +33 0174815883 </p>
+                                    <p><strong>e. </strong> TLFM@outlook.fr </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs_content">
+                <h1 class="tabs_title">Plus</h1>
+                <p class="tabs_text">
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Fusce ac sagittis risus, sit amet ultrices quam. Duis risus
+                     purus, dapibus et rutrum ut, iaculis eget metus. Mauris 
+                     vehicula lacinia est sed feugiat. Integer facilisis, 
+                     tellus pharetra tincidunt condimentum, sem turpis fringilla 
+                     dui, at egestas lacus tortor a erat. Orci varius natoque 
+                     penatibus et magnis dis parturient montes, nascetur ridiculus 
+                     mus. In hac habitasse platea dictumst. Orci varius natoque 
+                     penatibus et magnis dis parturient montes, nascetur ridiculus 
+                     mus. Etiam interdum vestibulum dolor. djshfksdlqhfkdsqjfjdks
+                </p>
+            </div>
+        </div>
+
+</div>
+
+    <!-- TOUS MES SCRIPTS INTEGRES -->
+
+    <script src="card.js"></script>
+    <script src="toggle.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY>0);
+        })
+    </script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+            LottieInteractivity.create({
+    mode: 'scroll',
+    player: '#lottie-camion',
+    actions: [
+      {
+        visibility: [0,1],
+        type: 'seek',
+        frames: [0, 201],
+      },
+        ],
+    });
+    </script>
+    <!--loading effect-->
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+     </script>
+
+</body>
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <span class="logo_name">TLFM</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Bonjour !</li>
+          <li><a href="#">Menu principal</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">Bien débuter</a></li>
+          <li><a href="#">Une question ?</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">Nos conseils</a></li>
+          <li><a href="#">Nous retrouver</a></li>
+          <li><a href="#">Apprendre</a></li>
+          <li><a href="#">A votre écoute</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">L'Equipe</li>
+          <li><a href="#">Les membres</a></li>
+          <li><a href="#">L'histoire de TLFM</a></li>
+          <li><a href="#">Nos valeurs</a></li>
+          <li><a href="#">Notre environnement</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Avec TLFM</li>
+          <li><a href="#">Notre vision du futur</a></li>
+          <li><a href="#">Le blog</a></li>
+          <li><a href="#">Notre application</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Newsletter</li>
+          <li><input type="text" placeholder="Entrez votre e-mail"></li>
+          <li><input type="button" value="Souscrire"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © - 2022 - <a href="#"> TFLM </a> · All rights reserved · </span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
