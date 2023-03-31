@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>  // pour read()
-
 #include "main.h"
 
 #define BLOCK_SIZE 16
@@ -172,7 +171,6 @@ unsigned char rcon[11] =
 {
     0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36,
 };
-
 
 unsigned char * g (unsigned char wInput[4], int counter)
 {
@@ -421,3 +419,239 @@ void printHex(unsigned char * data, int length) {
     }
     printf("\n");
 }
+
+#define BLOCK_SIZE 16
+
+int main()
+{
+    char boucle = 1;
+    // Initialisation
+    printf("Souhaitez-vous encrypter ou décrypter un texte, soldat ?\n'e' : encrypter, 'd' : décrypter\n");
+    unsigned char * plainText;
+    unsigned char * expandedKey;
+    unsigned char * cipher;
+    unsigned char * decrypted = malloc(BLOCK_SIZE);
+    // init the input value
+    char input[2] = "";
+    while(boucle){
+        scanf("%s",input);
+        if(input[0] == 'e'){
+
+            printf("Enter the 16-byte key for encryption (in hex): \n");
+            char input_key[33];
+            read(STDIN_FILENO, input_key, 33);
+
+            // Convert input_key from string of hex chars to binary
+            unsigned char aeskey[16];
+            for (int i = 0; i < 16; i++) {
+                sscanf(input_key + i * 2, "%2hhx", &aeskey[i]);
+            }
+
+            // Prompt for plaintext
+            printf("Enter the plaintext (in hex, up to 16 bytes): \n");
+            char input_plaintext[33];
+            read(STDIN_FILENO, input_plaintext, 33);
+
+            // Convert input_plaintext from string of hex chars to binary
+            int input_len = strlen(input_plaintext);
+            if (input_len % 2 != 0) {
+                printf("Invalid input length\n");
+                return 1;
+            }
+            int bytes_to_read = input_len / 2;
+            if (bytes_to_read > BLOCK_SIZE) {
+                printf("Input too large\n");
+                return 1;
+            }
+            unsigned char plaintext[BLOCK_SIZE];
+            for (int i = 0; i < bytes_to_read; i++) {
+                sscanf(input_plaintext + i * 2, "%2hhx", &plaintext[i]);
+            }
+
+            // Generate expanded key
+            expandedKey = keyExpansion(aeskey);
+            printf("The expanded key: ");
+            printHex(expandedKey, 176);
+
+            // Encrypt plaintext
+            cipher = malloc(BLOCK_SIZE);
+            AESEncryption(plaintext, expandedKey, cipher);
+
+            // Display encrypted result
+            printf("Cipher: ");
+            printHex(cipher, BLOCK_SIZE);
+
+            // Free memory
+            free(expandedKey);
+            free(cipher);
+
+            boucle = 0;
+            continue;
+        }
+        else if(input[0] == 'd'){
+            printf("Enter the 16-byte key for decryption (in hex): \n");
+            char input_key[33];
+            read(STDIN_FILENO, input_key, 33);
+
+            // Convert input_key from string of hex chars to binary
+            unsigned char aeskey[16];
+            for (int i = 0; i < 16; i++) {
+                sscanf(input_key + i * 2, "%2hhx", &aeskey[i]);
+            }
+
+            // Prompt for ciphertext
+            printf("Enter the ciphertext (in hex, 16 bytes): \n");
+            char input_ciphertext[33];
+            read(STDIN_FILENO, input_ciphertext, 33);
+
+            // Convert input_ciphertext from string of hex chars to binary
+            int input_len = strlen(input_ciphertext);
+            if (input_len % 2 != 0) {
+                printf("Invalid input length\n");
+                return 1;
+            }
+            int bytes_to_read = input_len / 2;
+            if (bytes_to_read > BLOCK_SIZE) {
+                printf("Input too large\n");
+                return 1;
+            }
+            unsigned char ciphertext[BLOCK_SIZE];
+            for (int i = 0; i < bytes_to_read; i++) {
+            sscanf(input_ciphertext + i * 2, "%2hhx", &ciphertext[i]);
+            }
+
+            // Generate expanded key
+            expandedKey = keyExpansion(aeskey);
+            printf("The expanded key: ");
+            printHex(expandedKey, 176);
+
+            // Decrypt ciphertext
+            decrypted = malloc(BLOCK_SIZE);
+            AESDecryption(ciphertext, expandedKey, decrypted);
+
+            // Display decrypted result
+            printf("Decrypted: \n");
+            printHex(decrypted, BLOCK_SIZE);
+
+            // Free memory
+            free(expandedKey);
+            free(decrypted);
+            boucle = 0;
+            continue;
+        }
+        printf("\nMauvais formalisme...\nRetentez votre chance :\n'e' : encrypter, 'd' : décrypter\n");
+    }
+    return EXIT_FAILURE;
+}
+////
+/*
+int main()
+{
+// Quelle encryption souhaitez-vous ?
+goback:
+    size_t nbChar = 0;
+    char begin[33];
+    do {
+        printf("Souhaitez-vous encrypter ou décrypter un texte, soldat ?\n'e' : encrypter, 'd' : décrypter\n");
+        read(STDIN_FILENO, begin, 33);
+        nbChar = sizeof(begin)/sizeof(char);
+
+        if ((begin[0] == 'e' || begin[0] == 'd')&&nbChar!=1) {
+            printf("I'm here\n");
+            break;
+        }
+        else{
+            printf("\nMauvais formalisme...\nRetentez votre chance :\n'e' : encrypter, 'd' : décrypter\n");
+            }
+        } while(1);
+
+    char c = begin[0];
+    char choice[1] = {'\0'};
+    int k = 0;
+
+	// AES ENCRYPTION && DECRYPTION
+	#define BLOCK_SIZE 16
+	unsigned char aeskey[16];
+    unsigned char plaintext[BLOCK_SIZE];
+	unsigned char cipher[BLOCK_SIZE];
+    unsigned char decrypted[BLOCK_SIZE];
+    unsigned char * expandedKey;
+    unsigned char * decrypted;
+
+    scanf("%s",begin);
+    // e
+    // d
+    // en => default
+
+    switch(begin)
+	{
+		case 'e':
+            printf("ok!");
+		// AES ENCRYPTION
+			// Prompt for encryption key
+			printf("Enter the 16-byte key for encryption (in hex): ");
+			char input_key[33];
+			read(STDIN_FILENO, input_key, 33);
+
+			// Convert input_key from string of hex chars to binary
+			unsigned char aeskey[16];
+			for (int i = 0; i < 16; i++) {
+				sscanf(input_key + i * 2, "%2hhx", &aeskey[i]);
+			}
+
+			// Prompt for plaintext
+			printf("Enter the plaintext (in hex, up to 16 bytes): ");
+			char input_plaintext[33];
+			read(STDIN_FILENO, input_plaintext, 33);
+
+			// Convert input_plaintext from string of hex chars to binary
+			int input_len = strlen(input_plaintext);
+			if (input_len % 2 != 0) {
+				printf("Invalid input length\n");
+				return 1;
+			}
+			int bytes_to_read = input_len / 2;
+			if (bytes_to_read > BLOCK_SIZE) {
+				printf("Input too large\n");
+				return 1;
+			}
+			unsigned char plaintext[BLOCK_SIZE];
+			for (int i = 0; i < bytes_to_read; i++) {
+				sscanf(input_plaintext + i * 2, "%2hhx", &plaintext[i]);
+			}
+
+			// Generate expanded key
+			unsigned char *expandedKey = keyExpansion(aeskey);
+			printf("The expanded key: %hhn\nKeep it safe soldier.", expandedKey);
+
+			// Encrypt plaintext
+			unsigned char cipher[BLOCK_SIZE];
+			AESEncryption(plaintext, expandedKey, cipher);
+
+			// Display encrypted result
+			printf("Cipher: ");
+			printHex(cipher, BLOCK_SIZE);
+
+			// Free memory
+			free(expandedKey);
+			break;
+        case 'd':
+            // AES DECRYPTION
+            printf("Entrez la clef 16-byte pour l'encryption (en hex) [envoyée par le général]: ");
+            unsigned char* expandedKey2;
+            scanf("%hhX", expandedKey2);
+
+            printf("Entrez le texte à déchiffrer : ");
+
+            // Déchiffrement du texte chiffré
+            AESDecryption(cipher, expandedKey2, decrypted);
+
+            // Affichage du texte déchiffré
+            printf("Decrypted: ");
+            printHex(decrypted, BLOCK_SIZE);
+            break;
+        default:
+            break;
+	}
+}
+*/
