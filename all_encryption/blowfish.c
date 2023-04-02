@@ -6,6 +6,9 @@
 #include "main.h"
 
 KeyStruct keyStruct;
+// BLOWFISH ENCRYPTION && DECRYPTION
+// Clé de chiffrement/déchiffrement
+unsigned char key[8] = {0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF};
 
 unsigned int default_p[] =
 {
@@ -262,4 +265,41 @@ void BlowfishDecryption(KeyStruct *ptr, unsigned int * left, unsigned int * righ
 
 	*left = leftSide;
 	*right = rightSide;
+}
+
+int main()
+{
+   // BLOWFISH ENCRYPTION && DECRYPTION
+
+   // Initialisation de la clé
+   KeyStruct keyStruct;
+   keyExpansionBlowfish(&keyStruct, key);
+
+   // Message à chiffrer/déchiffrer
+   char message[] = "Bonjour, ceci est un test de l'algorithme Blowfish.";
+   size_t messageLen = strlen(message);
+   printf("Message initial : %s\n", message);
+
+   // Conversion du message en un tableau d'entiers 32 bits
+   unsigned int *messageInts = (unsigned int *)message;
+   size_t messageIntsLen = messageLen / sizeof(unsigned int) + (messageLen % sizeof(unsigned int) ? 1 : 0);
+
+   // Chiffrement du message
+   for (unsigned int i = 0; i < messageIntsLen; i += 2) {
+      BlowfishEncryption(&keyStruct, &messageInts[i], &messageInts[i + 1]);
+   }
+
+   printf("Message chiffre : ");
+   for (size_t i = 0; i < messageLen; i++) {
+      printf("%02x", ((unsigned char *)messageInts)[i]);
+   }
+   printf("\n");
+
+   // Déchiffrement du message
+   for (size_t i = 0; i < messageIntsLen; i += 2) {
+      BlowfishDecryption(&keyStruct, &messageInts[i], &messageInts[i + 1]);
+   }
+
+   printf("Message dechiffre : %s\n", message);
+
 }
