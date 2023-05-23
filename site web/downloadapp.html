@@ -5,11 +5,15 @@
     <link rel="shortcut icon" href="favicon.ico">
     <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
     <link rel="stylesheet" href="menu.css">
+
     <!-- Boxiocns CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    </head>
 <body>
 
   <div class="sidebar close">
@@ -53,7 +57,7 @@
         <ul class="sub-menu">
           <li><a class="link_name" href="lesmembres.html">L'Equipe</a></li>
           <li><a href="lesmembres.html">Les membres</a></li>
-        </ul>
+          </ul>
       </li>
       <li>
         <div class="iocn-link">
@@ -70,12 +74,12 @@
         </ul>
       </li>
       <li>
-        <a href="#">
+        <a href="mentionslegales.html">
           <i class='bx bx-cog' ></i>
-          <span class="link_name">Mentions Légales</span>
+          <span class="link_name">Informations légales</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="mentionslegales.html">Mentions Légales</a></li>
+          <li><a class="link_name" href="mentionslegales.html">Informations légales</a></li>
         </ul>
       </li>
       <li>
@@ -97,46 +101,23 @@
   </li>
 </ul>
   </div>
-
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Bienvenue.</span>
+      <span class="text">Informations légales</span>
     </div>
-
-        <div class="hero">
-            <div class="carton">
-                <img src="home_image.png" width="300px">
-            </div>
-
-            <div class="voyagez">
-                <h1>
-                    Bienvenue soldat. Envie d'encrypter un message secret ?
-                </h1>
-            </div>
-            <button class="order">
-                <span class="default"><p class="salutations">Envoi d'un message</p></span>
-                <span class="success">
-                    <div class="enchante">
-                        à encrypter.
-                        <svg viewBox="0 0 12 10">
-                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                        </svg>
-                    </div>
-                </span>
-                <div class="box"></div>
-                <div class="truck">
-                    <div class="back"></div>
-                    <div class="front">
-                        <div class="window"></div>
-                    </div>
-                    <div class="light top"></div>
-                    <div class="light bottom"></div>
-                </div>
-                <div class="lines"></div>
-            </button>
+    <div class="projects">
+        <div class="hero2">
+            <!-- have fun -->
+            <a href="interface" download>
+              <button class="button-40" role="button">Télécharger l'utilitaire</button>
+            </a>
+            <a href="Guide d'installation et d'utilisation.pdf" download>
+              <button class="button-40" role="button">Guide d'utilisation</button>
+            </a>
+            <!---->
         </div>
-
+    </div>
   </section>
 
 <script src="card.js"></script>
@@ -207,51 +188,59 @@ function init() {
 init();
   </script>
 
+  <!--js---------------------------------->
+  <script src="js/lightbox.min.js"></script>
+  <script>
+    /*blog-filter-menu----------------------------*/
+    $(document).on('click','.project-filter li',function(){
+            $(this).addClass('project-filter-active').siblings().removeClass('project-filter-active')
+        });
+    </script>
 </body>
 
 <footer>
-    <div class="content">
-      <div class="top">
-        <div class="logo-details">
-          <span class="logo_name">U.G.</span>
-        </div>
-        <div class="media-icons">
-          <a href="https://www.instagram.com/morslator/"><i class="fab fa-instagram"></i></a>
-        </div>
+  <div class="content">
+    <div class="top">
+      <div class="logo-details">
+        <span class="logo_name">U.G.</span>
       </div>
-      <div class="link-boxes">
-        <ul class="box">
-          <li class="link_name">Bonjour !</li>
-          <li><a href="menu.html">Menu principal</a></li>
-          <li><a href="quisommesnous.html">Qui sommes-nous ?</a></li>
-          <li><a href="unequestion.html">Une question ?</a></li>
-          <li><a href="recommandations.html">Les recommandations !</a></li>
-        </ul>
-        <ul class="box">
-          <li class="link_name">Informations</li>
-          <li><a href="lesmembres.html">Les membres</a></li>
-          <li><a href="downloadapp.html">Télécharger l'application</a></li>
-          <li><a href="downloadapp.html">Mode d'emploi</a></li>
-        </ul>
-        <ul class="box">
-          <li class="link_name">Plus</li>
-          <li><a href="mentionslegales.html">Informations légales</a></li>
-        </ul>
-        <ul class="box input-box">
-          <li class="link_name">Newsletter</li>
-          <li><input type="text" placeholder="Entrez votre e-mail"></li>
-          <li><input type="button" value="Souscrire"></li>
-        </ul>
-      </div>
-    <div class="bottom-details">
-      <div class="bottom_text">
-        <span class="copyright_text">Copyright © - 2022 - <a href="#"> Morslator </a> · All rights reserved · </span>
-        <span class="policy_terms">
-          <a href="mentionslegales.html">Politique de confidentialité</a>
-          <a href="mentionslegales.html">Termes & conditions</a>
-        </span>
+      <div class="media-icons">
+        <a href="https://www.instagram.com/morslator/"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
+    <div class="link-boxes">
+      <ul class="box">
+        <li class="link_name">Bonjour !</li>
+        <li><a href="menu.html">Menu principal</a></li>
+        <li><a href="quisommesnous.html">Qui sommes-nous ?</a></li>
+        <li><a href="unequestion.html">Une question ?</a></li>
+        <li><a href="recommandations.html">Les recommandations !</a></li>
+      </ul>
+      <ul class="box">
+        <li class="link_name">Informations</li>
+        <li><a href="lesmembres.html">Les membres</a></li>
+        <li><a href="downloadapp.html">Télécharger l'application</a></li>
+        <li><a href="downloadapp.html">Mode d'emploi</a></li>
+      </ul>
+      <ul class="box">
+        <li class="link_name">Plus</li>
+        <li><a href="mentionslegales.html">Informations légales</a></li>
+      </ul>
+      <ul class="box input-box">
+        <li class="link_name">Newsletter</li>
+        <li><input type="text" placeholder="Entrez votre e-mail"></li>
+        <li><input type="button" value="Souscrire"></li>
+      </ul>
+    </div>
+  <div class="bottom-details">
+    <div class="bottom_text">
+      <span class="copyright_text">Copyright © - 2022 - <a href="#"> Morslator </a> · All rights reserved · </span>
+      <span class="policy_terms">
+        <a href="mentionslegales.html">Politique de confidentialité</a>
+        <a href="mentionslegales.html">Termes & conditions</a>
+      </span>
+    </div>
+  </div>
 </footer>
 
 </html>
